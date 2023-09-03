@@ -3,7 +3,7 @@
 <div class="mt-5 p-2 bg-gray-800">
         <div class="my-1 ml-2">
         <h2 class="text-h font-semibold">
-            Basement Wibu
+            Deskmate
         </h2>
         </div>
         <div class="my-3">
