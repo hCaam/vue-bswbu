@@ -15,7 +15,7 @@ export default {
     <div class="w-full shrink-0 " v-for="item in call">
         <div class="m-2  rounded base cursor-pointer p-1 ">
         <div class="flex flex-col">
-            <img v-bind:src="item.cover" class=" rounded-t-xl w-full" alt="">
+            <img v-bind:src="item.cover" class=" rounded-t-xl md:w-full" alt="">
             <div class="mx-2 my-auto">
                 <h1 class="font-bold text-lg my-2">{{ item.name }}</h1>
 

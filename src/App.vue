@@ -71,14 +71,18 @@ export default {
         />
 
     </div>
-    <div class="md:order-none order-first mx-auto md:mr-10 w-max">
+    <div class="md:order-none order-first mx-auto md:mr-10 w-full">
       <RouterView 
         :key="$route.path"
       ></RouterView>
     </div>
   </div>
 
-<!-- <RouterLink @click="home" to="/">home</RouterLink> -->
+<RouterLink @click="home" to="/">Home</RouterLink>
+<RouterLink to="/jsoneditor">Editor</RouterLink>
+
+
+
 <Footer></Footer>
 </template>
 
