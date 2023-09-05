@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import comment from './comment.vue'
-
+import ceditor from './jsongenerator.vue'
 
 // const manga = {
 //   props: {
@@ -18,6 +18,11 @@ const router = createRouter({
       path: '/:id',
       name: 'comment',
       component: comment
+    },
+    {
+      path: '/jsoneditor',
+      name: 'editor',
+      component: ceditor
     },
   ]
 })
