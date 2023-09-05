@@ -3,7 +3,8 @@ import genre from '../components/genre.json'
 export default {
     data() {
         return {
-            genre
+            tname:'', type:'', cover:'', synopsis:'', lastchap:'',
+            genre: [], link: []
         }
     }
 }
