@@ -30,7 +30,7 @@ export default {
                     </div>
                 </div>
 
-                <p class="my-2 mr-1 container text-sm overflow-y-clip hover:max-h-full max-h-32">
+                <p class="my-2 mr-1 container text-sm">
                     {{ item.synopsis }}    
                 </p>
 

@@ -1,21 +1,37 @@
 <script>
-import genre from '../components/genre.json'
+import genres from '../components/genre.json'
 export default {
+    methods: {
+        jsongen: function() {
+            var obj = new Object();
+            obj.id = this.tname.replace(/\s+/g, '-');
+            obj.name = this.tname;
+            obj.cover = this.cover;
+            obj.type = this.type;
+            obj.synopsis = this.synopsis;
+            obj.genre = this.igenre;
+            obj.lastchap = this.lastchap;
+            obj.link = this.link;
+            obj.content = this.content;
+            var jsonString= JSON.stringify(obj);
+            navigator.clipboard.writeText(jsonString);
+        }  
+    },
     data() {
         return {
-            tname:'', type:'', cover:'', synopsis:'', lastchap:'',
-            genre: [], link: []
+            tname:'', type:'', cover:'', synopsis:'', lastchap:'', genres,
+            igenre: [], link: [],
         }
     }
 }
 </script>
 <template>
-    <div class="w-full shrink-0 " >
+    <div class="w-full shrink-0 w-96" >
         <div class="m-2  rounded base cursor-pointer p-1 ">
         <div class="flex flex-col">
             <form class="mb-2 mx-2">
                 <label for="name" class="font-semibold my-2">Title</label><br>
-                <input type="text" id="name" name="name" v-model="tname" class="rounded p-1 bg-zinc-800" /><br>
+                <input type="text" id="name" name="name" v-model="tname" class="rounded p-1 bg-zinc-800 w-full" /><br>
 
                 <label for="type" class="font-semibold my-2">Type</label><br>
                     <input v-model="type" type="radio" id="manga" name="type" value="manga">
@@ -26,27 +42,32 @@ export default {
                     <label for="manhwa">Manhwa</label><br>
 
                 <label for="cover" class="font-semibold my-2">Cover</label><br>
-                <input type="text" id="cover" name="cover" v-model="cover" class="rounded p-1 bg-zinc-800"><br>
+                <input type="text" id="cover" name="cover" v-model="cover" class="rounded p-1 bg-zinc-800 w-full"><br>
                 
                 <label for="synopsis" class="font-semibold my-2">Synopsis</label><br>
-                <textarea id="synopsis" name="synopsis" v-model="synopsis" class="rounded p-1 bg-zinc-800"></textarea><br>
+                <textarea id="synopsis" name="synopsis" v-model="synopsis" class="rounded p-1 bg-zinc-800 w-full"></textarea><br>
                 
                 
-                <div v-for="item in genre">
+                <div v-for="item in genres">
                     <input type="checkbox" v-bind:id="item.genre" v-bind:value="item.genre" v-model="igenre">
                     <label v-bind:for="item.genre">{{ item.genre }}</label>
                 </div>
                 
 
                 <label for="lastchap" class="font-semibold my-2">Lastchap</label><br>
-                <input type="text" id="lastchap" name="lastchap" v-model="lastchap" class="rounded p-1 bg-zinc-800"><br>
+                <input type="text" id="lastchap" name="lastchap" v-model="lastchap" class="rounded p-1 bg-zinc-800 w-full"><br>
 
                 <label for="link" class="font-semibold my-2">Link</label><br>
-                <input type="text" id="link" name="link" v-model="link" class="rounded p-1 bg-zinc-800"><br>
-                <input type="text" id="link" name="link" v-model="link" class="rounded p-1 bg-zinc-800"><br>
-                <input type="text" id="link" name="link" v-model="link" class="rounded p-1 bg-zinc-800"><br>
+                <input type="text" id="link" name="link" v-model="link" class="rounded p-1 bg-zinc-800 w-full my-1"><br>
+                <input type="text" id="link" name="link" v-model="link" class="rounded p-1 bg-zinc-800 w-full my-1"><br>
+                <input type="text" id="link" name="link" v-model="link" class="rounded p-1 bg-zinc-800 w-full my-1"><br>
 
             </form>
+        </div>
+    </div>
+    
+    <div class="w-full shrink-0 " >
+        <div class="m-2  rounded base cursor-pointer p-1">
             <img src="" class=" rounded-t-xl w-full" alt="">
             <div class="mx-2 my-auto">
                 <h1 class="font-bold text-lg my-2">{{ tname }}</h1>

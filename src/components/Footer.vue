@@ -1,10 +1,16 @@
+<script>
+import { RouterLink, RouterView } from 'vue-router'
+</script>
 <template>
 
 <div class="mt-5 p-2 bg-gray-800">
         <div class="my-1 ml-2">
+        <RouterLink @click="home" to="/">
         <h2 class="text-h font-semibold">
             Deskmate
         </h2>
+        </RouterLink>
+
         </div>
         <div class="my-3">
         <div class="ml-2 ">
@@ -24,7 +30,11 @@
             </a>
         </div> -->
         </div>
-
+        <RouterLink to="/jsoneditor">
+            <h2 class="text-xs">
+            Editor
+        </h2>
+        </RouterLink>
         <div class="text-xs">
             <p>This Website is Somehow Broke, so</p> 
             <p>Plesae contact me if you found something</p>

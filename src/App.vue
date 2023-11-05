@@ -18,7 +18,7 @@ export default {
   },
   computed: {
     readmode(){
-      return this.readmodeOn ? 'md:w-1/3' : 'grid md:grid-cols-2 md:mx-8'
+      return this.readmodeOn ? 'md:grid md:grid-cols-3' : 'grid md:grid-cols-2 md:mx-8'
     },
   },
   methods: {
@@ -63,7 +63,7 @@ export default {
   <div class="md:flex-row flex-col flex">
     <div id="showList" @click="toggleReadmode" 
       :class="readmode" 
-      class=" flex flex-col md:flex-row">
+      class=" md:grid md:grid-cols-3">
 
         <callcontent
           :limit="2"
@@ -71,15 +71,24 @@ export default {
         />
 
     </div>
-    <div class="md:order-none order-first mx-auto md:mr-10 w-full">
+    <div class="md:order-none order-first mx-auto md:mr-10 max-w-52">
       <RouterView 
         :key="$route.path"
       ></RouterView>
     </div>
+    <div class="md:hidden sticky top-0 order-first">
+      <div class="p-2 w-full bg-neutral-800">
+      <RouterLink @click="home" to="/">
+          <h2 class="text-h font-semibold">
+              Deskmate
+          </h2>
+        </RouterLink>
+    </div>
+    </div>
   </div>
 
-<RouterLink @click="home" to="/">Home</RouterLink>
-<RouterLink to="/jsoneditor">Editor</RouterLink>
+
+
 
 
 
