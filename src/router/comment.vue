@@ -42,9 +42,13 @@ export default {
                 </div>
 
                 <div v-for="content in item.content">
+                <div>
                     <h1 class="font-semibold">{{ content.heading }}</h1>
                     <p>{{ content.content }}</p>
+                </div>
+                
                     <img v-if="content.image !== null" v-bind:src="content.image" alt="">
+
                 </div>
             </div>
         </div>
