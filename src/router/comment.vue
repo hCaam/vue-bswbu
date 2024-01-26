@@ -13,7 +13,7 @@ export default {
 </script>
 <template>
     <div class="w-full shrink-0 " v-for="item in call">
-        <div class="m-2  rounded base cursor-pointer p-1 ">
+        <div class="m-2  rounded base p-1 ">
         <div class="flex flex-col">
             <img v-bind:src="item.cover" class=" rounded-t-xl md:w-full" alt="">
             <div class="mx-2 my-auto">
@@ -41,8 +41,8 @@ export default {
                     </a>
                 </div>
 
-                <div v-for="content in item.content">
-                <div>
+                <div v-for="content in item.content" class="border-solid border-2 rounded-md border-indigo-500/50">
+                <div class="p-2">
                     <h1 class="font-semibold">{{ content.heading }}</h1>
                     <p>{{ content.content }}</p>
                 </div>

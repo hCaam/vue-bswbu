@@ -20,23 +20,30 @@ export default {
     readmode(){
       return this.readmodeOn ? 'md:grid md:grid-cols-3' : 'grid md:grid-cols-2 md:mx-8'
     },
+    comment(){
+      return this.commentMode ? 'w-full' : ''
+    },
   },
   methods: {
     toggleReadmode(){
       if(this.readmodeOn == true){
         this.readmodeOn = !this.readmodeOn
+        this.comment = !this.comment
       }       
     },
     home(){
       this.readmodeOn = true
+      this.comment = true
     },
   },
   watch:{
     $route (to, from){
       if(this.$route.path == '/'){
         this.readmodeOn = true;
+        this.comment = true
       } else {
         this.readmodeOn = false;
+        this.comment = false
       }
     }
   }
@@ -71,7 +78,7 @@ export default {
         />
 
     </div>
-    <div class="md:order-none order-first mx-auto md:mr-10 max-w-52">
+    <div class="md:order-none order-first mx-auto md:mr-10 " :class="comment">
       <RouterView 
         :key="$route.path"
       ></RouterView>
